@@ -1,6 +1,7 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "./App.css";
+import Detail from "./components/Detail";
 import Home from "./components/Home";
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/detail" element={<div>Detail</div>} />
+        <Route path="/detail" element={<Detail />} />
       </Routes>
     </div>
   );
