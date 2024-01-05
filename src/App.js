@@ -1,18 +1,32 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "./App.css";
 import Detail from "./routes/Detail";
 import Home from "./routes/Home";
 
 function App() {
+  const navigate = useNavigate();
+
   return (
     <div className="App">
       <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="#home">Picture-Shop</Navbar.Brand>
+          <Navbar.Brand href="/">Picture-Shop</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Cart</Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              Home
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("/detail");
+              }}
+            >
+              Detail
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
