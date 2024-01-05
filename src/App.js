@@ -1,12 +1,9 @@
-import { useState } from "react";
+import { Link, Route, Routes } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "./App.css";
-import Picture from "./components/Picture";
-import data from "./data.js";
+import Home from "./components/Home";
 
 function App() {
-  const [pictures, setPictures] = useState(data);
-
   return (
     <div className="App">
       <Navbar bg="light" variant="light">
@@ -19,19 +16,10 @@ function App() {
         </Container>
       </Navbar>
 
-      <img
-        className="main-bg"
-        src={process.env.PUBLIC_URL + "/images/background.jpg"}
-        alt=""
-      ></img>
-
-      <div className="container">
-        <div className="row">
-          {pictures.map((_, i) => {
-            return <Picture picture={pictures[i]} index={i} />;
-          })}
-        </div>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/detail" element={<div>Detail</div>} />
+      </Routes>
     </div>
   );
 }
