@@ -1,9 +1,13 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "./App.css";
+import Deal1 from "./components/Deal1";
+import Deal2 from "./components/Deal2";
+import Deal3 from "./components/Deal3";
 import Detail from "./routes/Detail";
 import Home from "./routes/Home";
 import NotFound from "./routes/NotFound";
+import Promotion from "./routes/Promotion";
 
 function App() {
   const navigate = useNavigate();
@@ -28,6 +32,13 @@ function App() {
             >
               Detail
             </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("/promotion");
+              }}
+            >
+              Promotion
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -35,6 +46,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/detail" element={<Detail />} />
+        <Route path="/promotion" element={<Promotion />}>
+          <Route path="1" element={<Deal1 />}></Route>
+          <Route path="2" element={<Deal2 />}></Route>
+          <Route path="3" element={<Deal3 />}></Route>
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
