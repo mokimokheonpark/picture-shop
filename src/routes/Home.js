@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Picture from "./Picture";
-import data from "../data.js";
+import Picture from "../components/Picture";
+import data from "../data";
 
 function Home() {
   const [pictures, setPictures] = useState(data);

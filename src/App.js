@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "./App.css";
-import Detail from "./components/Detail";
-import Home from "./components/Home";
+import Detail from "./routes/Detail";
+import Home from "./routes/Home";
 
 function App() {
   return (
