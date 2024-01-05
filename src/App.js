@@ -3,6 +3,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import "./App.css";
 import Detail from "./routes/Detail";
 import Home from "./routes/Home";
+import NotFound from "./routes/NotFound";
 
 function App() {
   const navigate = useNavigate();
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/detail" element={<Detail />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
