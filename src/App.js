@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "./App.css";
@@ -8,8 +9,10 @@ import Detail from "./routes/Detail";
 import Home from "./routes/Home";
 import NotFound from "./routes/NotFound";
 import Promotion from "./routes/Promotion";
+import data from "./data";
 
 function App() {
+  const [pictures, setPictures] = useState(data);
   const navigate = useNavigate();
 
   return (
@@ -44,8 +47,8 @@ function App() {
       </Navbar>
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route path="/" element={<Home pictures={pictures} />} />
+        <Route path="/detail/:id" element={<Detail pictures={pictures} />} />
         <Route path="/promotion" element={<Promotion />}>
           <Route path="1" element={<Deal1 />}></Route>
           <Route path="2" element={<Deal2 />}></Route>

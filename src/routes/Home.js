@@ -1,10 +1,6 @@
-import { useState } from "react";
 import Picture from "../components/Picture";
-import data from "../data";
 
-function Home() {
-  const [pictures, setPictures] = useState(data);
-
+function Home(props) {
   return (
     <>
       <img
@@ -15,8 +11,8 @@ function Home() {
 
       <div className="container">
         <div className="row">
-          {pictures.map((_, i) => {
-            return <Picture picture={pictures[i]} index={i} />;
+          {props.pictures.map((_, i) => {
+            return <Picture picture={props.pictures[i]} index={i} key={i} />;
           })}
         </div>
       </div>
