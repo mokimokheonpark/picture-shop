@@ -5,6 +5,7 @@ import "./App.css";
 import Deal1 from "./components/Deal1";
 import Deal2 from "./components/Deal2";
 import Deal3 from "./components/Deal3";
+import Cart from "./routes/Cart";
 import Detail from "./routes/Detail";
 import Home from "./routes/Home";
 import NotFound from "./routes/NotFound";
@@ -35,6 +36,13 @@ function App() {
             >
               Promotion
             </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("/cart");
+              }}
+            >
+              Cart
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -47,6 +55,7 @@ function App() {
           <Route path="2" element={<Deal2 />}></Route>
           <Route path="3" element={<Deal3 />}></Route>
         </Route>
+        <Route path="/cart" element={<Cart />}></Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
