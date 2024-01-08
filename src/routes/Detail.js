@@ -1,10 +1,15 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { Nav } from "react-bootstrap";
+import "./detail.css";
+import TabContent from "../components/TabContent";
 
 function Detail(props) {
   const { id } = useParams();
   const picture = props.pictures.find(function (p) {
     return p.id === parseInt(id);
   });
+  const [tab, setTab] = useState(0);
 
   return (
     <div className="container">
@@ -24,6 +29,26 @@ function Detail(props) {
           <button className="btn btn-danger">Order</button>
         </div>
       </div>
+
+      <Nav className="tabs" variant="tabs" defaultActiveKey="tab0">
+        <Nav.Item>
+          <Nav.Link onClick={() => setTab(0)} eventKey="tab0">
+            Tab0
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link onClick={() => setTab(1)} eventKey="tab1">
+            Tab1
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link onClick={() => setTab(2)} eventKey="tab2">
+            Tab2
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
+
+      <TabContent tab={tab} />
     </div>
   );
 }
