@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Nav } from "react-bootstrap";
 import "./detail.css";
 import TabContent from "../components/TabContent";
 
 function Detail(props) {
+  const [animationStatus, setAnimationStatus] = useState("");
+  useEffect(() => {
+    setAnimationStatus("animation-end");
+    return () => {
+      setAnimationStatus("");
+    };
+  }, []);
   const { id } = useParams();
   const picture = props.pictures.find(function (p) {
     return p.id === parseInt(id);
@@ -12,7 +19,7 @@ function Detail(props) {
   const [tab, setTab] = useState(0);
 
   return (
-    <div className="container">
+    <div className={"container animation-start " + animationStatus}>
       <div className="row">
         <div className="col-md-6">
           <img
