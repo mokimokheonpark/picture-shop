@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Nav } from "react-bootstrap";
 import "./detail.css";
@@ -20,6 +20,7 @@ function Detail(props) {
   });
   const [tab, setTab] = useState(0);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <div className={"container animation-start " + animationStatus}>
@@ -46,6 +47,7 @@ function Detail(props) {
                   quantity: 1,
                 })
               );
+              navigate("/cart");
             }}
           >
             Order
