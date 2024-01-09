@@ -6,11 +6,11 @@ function Promotion() {
   const navigate = useNavigate();
 
   return (
-    <div className="promotion">
-      <h1>Promotion</h1>
+    <>
+      <h1>Today's Promotion</h1>
 
       <Button
-        className="promotion-button"
+        className="button"
         variant="primary"
         size="lg"
         onClick={() => {
@@ -21,7 +21,7 @@ function Promotion() {
       </Button>
 
       <Button
-        className="promotion-button"
+        className="button"
         variant="primary"
         size="lg"
         onClick={() => {
@@ -41,10 +41,10 @@ function Promotion() {
         Deal3
       </Button>
 
-      <div className="promotion-outlet">
+      <div className="outlet">
         <Outlet></Outlet>
       </div>
-    </div>
+    </>
   );
 }
 
