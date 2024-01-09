@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { Nav } from "react-bootstrap";
 import "./detail.css";
 import TabContent from "../components/TabContent";
+import { orderPicture } from "../store/cartSlice";
 
 function Detail(props) {
   const [animationStatus, setAnimationStatus] = useState("");
@@ -17,6 +19,7 @@ function Detail(props) {
     return p.id === parseInt(id);
   });
   const [tab, setTab] = useState(0);
+  const dispatch = useDispatch();
 
   return (
     <div className={"container animation-start " + animationStatus}>
@@ -33,7 +36,20 @@ function Detail(props) {
           <h4 className="pt-5">{picture.title}</h4>
           <p>{picture.detail}</p>
           <p>{picture.price}</p>
-          <button className="btn btn-danger">Order</button>
+          <button
+            className="btn btn-danger"
+            onClick={() => {
+              dispatch(
+                orderPicture({
+                  id: picture.id,
+                  title: picture.title,
+                  quantity: 1,
+                })
+              );
+            }}
+          >
+            Order
+          </button>
         </div>
       </div>
 
