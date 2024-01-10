@@ -3,21 +3,63 @@ const data = [
     id: 0,
     title: "Picture 0",
     detail: "blabla...",
-    price: "$100",
+    price: "$140",
   },
 
   {
     id: 1,
     title: "Picture 1",
     detail: "blabla...",
-    price: "$190",
+    price: "$320",
   },
 
   {
     id: 2,
     title: "Picture 2",
     detail: "blabla...",
-    price: "$299",
+    price: "$380",
+  },
+
+  {
+    id: 3,
+    title: "Picture 3",
+    detail: "blabla...",
+    price: "$720",
+  },
+
+  {
+    id: 4,
+    title: "Picture 4",
+    detail: "blabla...",
+    price: "$680",
+  },
+
+  {
+    id: 5,
+    title: "Picture 5",
+    detail: "blabla...",
+    price: "$740",
+  },
+
+  {
+    id: 6,
+    title: "Picture 6",
+    detail: "blabla...",
+    price: "$990",
+  },
+
+  {
+    id: 7,
+    title: "Picture 7",
+    detail: "blabla...",
+    price: "$290",
+  },
+
+  {
+    id: 8,
+    title: "Picture 8",
+    detail: "blabla...",
+    price: "$480",
   },
 ];
 
