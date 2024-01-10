@@ -21,6 +21,14 @@ function Detail(props) {
   const [tab, setTab] = useState(0);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  useEffect(() => {
+    let visited = localStorage.getItem("visited");
+    visited = JSON.parse(visited);
+    visited.push(picture.id);
+    visited = new Set(visited);
+    visited = Array.from(visited);
+    localStorage.setItem("visited", JSON.stringify(visited));
+  }, []);
 
   return (
     <div className={"container animation-start " + animationStatus}>

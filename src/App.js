@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "./App.css";
@@ -15,6 +15,11 @@ import data from "./data";
 function App() {
   const [pictures, setPictures] = useState(data);
   const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem("visited") === null) {
+      localStorage.setItem("visited", JSON.stringify([]));
+    }
+  }, []);
 
   return (
     <div className="App">
