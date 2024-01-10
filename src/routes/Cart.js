@@ -1,6 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
-import { increaseQuantity } from "../store/cartSlice";
+import {
+  increaseQuantity,
+  decreaseQuantity,
+  cancelOrder,
+} from "../store/cartSlice";
 import "./cart.css";
 
 function Cart() {
@@ -12,15 +16,19 @@ function Cart() {
   return (
     <>
       <h1>Your Cart</h1>
+
       <Table>
         <thead>
           <tr>
             <th>Order #</th>
             <th>Title</th>
             <th>Quantity</th>
-            <th>Add</th>
+            <th>Increase</th>
+            <th>Decrease</th>
+            <th>Cancel</th>
           </tr>
         </thead>
+
         <tbody>
           {state.cartSlice.map((_, i) => (
             <tr key={i}>
@@ -34,6 +42,25 @@ function Cart() {
                   }}
                 >
                   +
+                </button>
+              </td>
+              <td>
+                <button
+                  onClick={() => {
+                    dispatch(decreaseQuantity(state.cartSlice[i].id));
+                  }}
+                >
+                  -
+                </button>
+              </td>
+              <td>
+                {" "}
+                <button
+                  onClick={() => {
+                    dispatch(cancelOrder(state.cartSlice[i].id));
+                  }}
+                >
+                  x
                 </button>
               </td>
             </tr>
