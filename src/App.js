@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { useQuery } from "@tanstack/react-query";
 import "./App.css";
 import Deal1 from "./components/Deal1";
 import Deal2 from "./components/Deal2";
@@ -21,6 +22,11 @@ function App() {
       localStorage.setItem("visited", JSON.stringify([]));
     }
   }, []);
+  const result = useQuery(["query"], () => {
+    return axios.get("").then((a) => {
+      return a.data;
+    });
+  });
 
   return (
     <div className="App">
