@@ -10,6 +10,7 @@ import Detail from "./routes/Detail";
 import Home from "./routes/Home";
 import NotFound from "./routes/NotFound";
 import Promotion from "./routes/Promotion";
+import Visited from "./routes/Visited";
 import data from "./data";
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
     <div className="App">
       <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="/">Picture-Shop</Navbar.Brand>
+          <Navbar.Brand>Picture-Shop</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link
               onClick={() => {
@@ -40,6 +41,13 @@ function App() {
               }}
             >
               Promotion
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("/visited");
+              }}
+            >
+              Visited
             </Nav.Link>
             <Nav.Link
               onClick={() => {
@@ -60,6 +68,10 @@ function App() {
           <Route path="2" element={<Deal2 />}></Route>
           <Route path="3" element={<Deal3 />}></Route>
         </Route>
+        <Route
+          path="/visited"
+          element={<Visited pictures={pictures} />}
+        ></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

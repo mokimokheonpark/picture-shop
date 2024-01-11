@@ -5,7 +5,6 @@ import {
   decreaseQuantity,
   cancelOrder,
 } from "../store/cartSlice";
-import "./cart.css";
 
 function Cart() {
   const state = useSelector((state) => {

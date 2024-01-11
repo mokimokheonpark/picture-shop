@@ -26,7 +26,7 @@ const cartSlice = createSlice({
       const index = state.findIndex((s) => {
         return s.id === action.payload;
       });
-      if (state[index].quantity > 0) {
+      if (state[index].quantity > 1) {
         state[index].quantity--;
       }
     },

@@ -1,4 +1,5 @@
 import Picture from "../components/Picture";
+import "./home.css";
 
 function Home(props) {
   return (
