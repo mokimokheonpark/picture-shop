@@ -10,9 +10,13 @@ function Visited(props) {
 
       <div className="container">
         <div className="row">
-          {visited.map((v, i) => {
-            return <Picture picture={props.pictures[v]} index={v} key={i} />;
-          })}
+          {visited
+            ? visited.map((v, i) => {
+                return (
+                  <Picture picture={props.pictures[v]} index={v} key={i} />
+                );
+              })
+            : null}
         </div>
       </div>
     </>

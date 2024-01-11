@@ -22,11 +22,11 @@ function App() {
       localStorage.setItem("visited", JSON.stringify([]));
     }
   }, []);
-  const result = useQuery(["query"], () => {
-    return axios.get("").then((a) => {
-      return a.data;
-    });
-  });
+  // const result = useQuery(["query"], () => {
+  //   return axios.get("").then((a) => {
+  //     return a.data;
+  //   });
+  // });
 
   return (
     <div className="App">
