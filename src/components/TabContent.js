@@ -17,9 +17,9 @@ function TabContent(props) {
     <div className={"tab-content animation-start " + animationStatus}>
       {
         [
-          <h4>Tab0 Content... blabla...</h4>,
-          <h4>Tab1 Content... blabla...</h4>,
-          <h4>Tab2 Content... blabla...</h4>,
+          <h4>Tab0 Content... (ex: long description of the picture)</h4>,
+          <h4>Tab1 Content... (ex: delivery information)</h4>,
+          <h4>Tab2 Content... (ex: refund policy)</h4>,
         ][props.tab]
       }
     </div>
