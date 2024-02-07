@@ -36,7 +36,7 @@ function App() {
           <Nav className="me-auto">
             <Nav.Link
               onClick={() => {
-                navigate("/");
+                navigate("/picture-shop");
               }}
             >
               Home
@@ -67,7 +67,7 @@ function App() {
       </Navbar>
 
       <Routes>
-        <Route path="/" element={<Home pictures={pictures} />} />
+        <Route path="/picture-shop" element={<Home pictures={pictures} />} />
         <Route path="/detail/:id" element={<Detail pictures={pictures} />} />
         <Route path="/promotion" element={<Promotion />}>
           <Route path="1" element={<Deal1 />}></Route>
