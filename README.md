@@ -1,12 +1,19 @@
 # Picture Shop
 
-[Forum](https://mokimokheonpark.github.io/picture-shop/) is ......
+[Picture Shop](https://mokimokheonpark.github.io/picture-shop/) is a web application designed for users to explore various pictures and order them. Developed primarily for practicing and applying React skills.
 
-## Used Stacks
+## Used Technologies
 
-- 1 ...
-- 2 ...
-- 3 ...
+- React Hooks
+- React Router
+- React Query
+- React Bootstrap
+- Redux Toolkit
+- JSX
+- AJAX
+- Single Page Application
+- Clinet Side Rendering
+- Reponsive Design
 
 ## Contributions
 
