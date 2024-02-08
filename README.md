@@ -12,8 +12,8 @@
 - JSX
 - AJAX
 - Single Page Application
-- Clinet Side Rendering
-- Reponsive Design
+- Client Side Rendering
+- Responsive Design
 
 ## Contributions
 
